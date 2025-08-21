@@ -49,7 +49,7 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-[#E8F2F4] hover:text-[#17CFE3] transition-colors duration-300 font-medium text-lg"
+                  className="text-[#E8F2F4] hover:text-red-400 transition-colors duration-300 font-medium text-lg"
                 >
                   {item.name}
                 </a>
@@ -58,7 +58,7 @@ const Header = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 text-[#E8F2F4] hover:text-[#17CFE3] transition-colors z-50 relative bg-[#17CFE3]/10 rounded-lg"
+              className="md:hidden p-2 text-[#E8F2F4] hover:text-red-400 transition-colors z-50 relative bg-[#17CFE3]/10 rounded-lg"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -85,7 +85,7 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-[#E8F2F4] hover:text-[#17CFE3] transition-colors duration-300 font-medium block text-lg py-3 border-b border-[#17CFE3]/10 last:border-b-0"
+                  className="text-[#E8F2F4] hover:text-red-400 transition-colors duration-300 font-medium block text-lg py-3 border-b border-[#17CFE3]/10 last:border-b-0"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
