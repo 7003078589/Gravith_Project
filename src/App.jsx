@@ -57,13 +57,13 @@ function App() {
       </section>
 
       {/* Other sections */}
-      <section id="about" className="py-12 sm:py-16 lg:py-20 bg-[#063C49]/80">
+      <section id="about" className="py-16 sm:py-20 lg:py-24 bg-[#063C49]/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#E8F2F4] mb-4 sm:mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#E8F2F4] mb-4 sm:mb-6">
               About GRAVIT
             </h2>
-            <p className="text-lg sm:text-xl text-[#E8F2F4]/80 max-w-3xl mx-auto px-4">
+            <p className="text-base sm:text-lg md:text-xl text-[#E8F2F4]/80 max-w-3xl mx-auto px-4">
               We understand client requirements and provide solutions based on the problems. 
               Currently we make use of all 3rd party applications to fix the solutions for our clients problems.
             </p>
@@ -71,13 +71,13 @@ function App() {
         </div>
       </section>
 
-      <section id="services" className="py-12 sm:py-16 lg:py-20 bg-[#073D4C]/80">
+      <section id="services" className="py-16 sm:py-20 lg:py-24 bg-[#073D4C]/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#E8F2F4] mb-4 sm:mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#E8F2F4] mb-4 sm:mb-6">
               Our Services
             </h2>
-            <p className="text-lg sm:text-xl text-[#E8F2F4]/80 max-w-3xl mx-auto px-4">
+            <p className="text-base sm:text-lg md:text-xl text-[#E8F2F4]/80 max-w-3xl mx-auto px-4">
               From elaborate Excel sheets to better managed tools, websites for companies, 
               systems and business practices - we've got you covered.
             </p>
@@ -99,21 +99,21 @@ function App() {
               }
             ].map((service, index) => (
               <div key={index} className="bg-[#042B35]/50 p-6 sm:p-8 rounded-2xl border border-[#17CFE3]/20 hover:border-[#17CFE3]/40 transition-all duration-300">
-                <h3 className="text-xl sm:text-2xl font-bold text-[#E8F2F4] mb-3 sm:mb-4">{service.title}</h3>
-                <p className="text-[#E8F2F4]/80 text-sm sm:text-base">{service.description}</p>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#E8F2F4] mb-3 sm:mb-4">{service.title}</h3>
+                <p className="text-sm sm:text-base text-[#E8F2F4]/80">{service.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-[#042B35]/80">
+      <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-[#042B35]/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#E8F2F4] mb-4 sm:mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#E8F2F4] mb-4 sm:mb-6">
               Get In Touch
             </h2>
-            <p className="text-lg sm:text-xl text-[#E8F2F4]/80 mb-6 sm:mb-8 px-4">
+            <p className="text-base sm:text-lg md:text-xl text-[#E8F2F4]/80 mb-6 sm:mb-8 px-4">
               Ready to drive your business growth? Let's talk.
             </p>
             <button className="inline-flex items-center justify-center rounded-2xl px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold bg-[#17CFE3] text-slate-900 shadow-lg shadow-cyan-500/10 hover:brightness-110 transition w-full sm:w-auto">
@@ -122,8 +122,6 @@ function App() {
           </div>
         </div>
       </section>
-
-
     </div>
   );
 }

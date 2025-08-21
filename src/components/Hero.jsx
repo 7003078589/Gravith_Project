@@ -7,10 +7,10 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%2317CFE3" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50 md:opacity-30"></div>
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20 pb-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-24 pb-20">
         <div className="max-w-4xl">
           <div className="animate-slide-up">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[88px] font-extrabold text-[#E8F2F4] leading-[0.9] sm:leading-[0.95] mb-4 sm:mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[88px] font-extrabold text-[#E8F2F4] leading-[0.9] sm:leading-[0.95] mb-4 sm:mb-6">
               Driving
               <br />
               Business
@@ -18,7 +18,7 @@ const Hero = () => {
               Growth
             </h1>
             
-            <p className="text-lg sm:text-xl md:text-2xl text-[#17CFE3] font-semibold mb-6 sm:mb-8 animate-fade-in">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#17CFE3] font-semibold mb-6 sm:mb-8 animate-fade-in">
               Your Business, Our Expertise
             </p>
             

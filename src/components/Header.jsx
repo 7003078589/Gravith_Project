@@ -58,7 +58,7 @@ const Header = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 text-[#E8F2F4] hover:text-[#17CFE3] transition-colors z-50 relative bg-[#17CFE3]/10 rounded-lg"
+              className="md:hidden p-2 text-[#E8F2F4] hover:text-[#17CFE3] transition-colors z-50 relative"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -76,16 +76,16 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Mobile Navigation - Fixed Layout */}
-          <div className={`md:hidden absolute top-full left-0 right-0 bg-[#042B35]/95 backdrop-blur-md border-b border-[#17CFE3]/20 transition-all duration-300 ${
-            isMenuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
+          {/* Mobile Navigation - Full Screen Overlay */}
+          <div className={`md:hidden fixed top-16 left-0 right-0 bg-[#042B35]/95 backdrop-blur-md border-b border-[#17CFE3]/20 transition-all duration-300 ${
+            isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
           }`}>
-            <nav className="py-6 px-4 space-y-4">
+            <nav className="py-8 px-6 space-y-6">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-[#E8F2F4] hover:text-[#17CFE3] transition-colors duration-300 font-medium block text-lg py-3 border-b border-[#17CFE3]/10 last:border-b-0"
+                  className="text-[#E8F2F4] hover:text-[#17CFE3] transition-colors duration-300 font-medium block text-xl py-4 border-b border-[#17CFE3]/10 last:border-b-0"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -95,8 +95,6 @@ const Header = () => {
           </div>
         </div>
       </header>
-
-
     </>
   );
 };
