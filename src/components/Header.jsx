@@ -14,6 +14,18 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
@@ -24,48 +36,54 @@ const Header = () => {
   return (
     <>
       {/* Mobile Menu Full Screen Overlay */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 z-50 md:hidden">
-          {/* Backdrop */}
-          <div 
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-            onClick={() => setIsMenuOpen(false)}
-          />
-          
-          {/* Menu Content */}
-          <div className="absolute inset-0 bg-[#042B35]">
-            {/* Menu Header */}
-            <div className="flex items-center justify-between p-4 border-b border-[#17CFE3]/20">
-              <Logo />
-              <button
-                className="p-2 text-[#E8F2F4] hover:text-[#17CFE3] transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-                aria-label="Close menu"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            
-            {/* Menu Items */}
-            <nav className="p-6">
-              <div className="space-y-6">
-                {navItems.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="text-[#E8F2F4] hover:text-[#17CFE3] transition-colors duration-300 font-medium block text-2xl py-4 border-b border-[#17CFE3]/10 last:border-b-0"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-            </nav>
+      <div className={`fixed inset-0 z-50 md:hidden transition-all duration-300 ease-in-out ${
+        isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+      }`}>
+        {/* Backdrop */}
+        <div 
+          className="absolute inset-0 bg-black/70 backdrop-blur-md"
+          onClick={() => setIsMenuOpen(false)}
+        />
+        
+        {/* Menu Content - Slide in from right */}
+        <div className={`absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-[#042B35] shadow-2xl transition-transform duration-300 ease-in-out ${
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}>
+          {/* Menu Header */}
+          <div className="flex items-center justify-between p-6 border-b border-[#17CFE3]/20">
+            <Logo />
+            <button
+              className="p-2 rounded-lg bg-[#17CFE3]/10 text-[#E8F2F4] hover:text-[#17CFE3] hover:bg-[#17CFE3]/20 transition-all duration-200"
+              onClick={() => setIsMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
           </div>
+          
+          {/* Menu Items */}
+          <nav className="p-6">
+            <div className="space-y-2">
+              {navItems.map((item, index) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-[#E8F2F4] hover:text-[#17CFE3] hover:bg-[#17CFE3]/10 transition-all duration-200 font-medium block text-xl py-4 px-4 rounded-lg"
+                  onClick={() => setIsMenuOpen(false)}
+                  style={{
+                    animationDelay: `${index * 100}ms`,
+                    animation: isMenuOpen ? 'slideInRight 0.3s ease-out forwards' : 'none'
+                  }}
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
+          </nav>
         </div>
-      )}
+      </div>
 
       {/* Main Header */}
       <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
@@ -95,7 +113,7 @@ const Header = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 text-[#E8F2F4] hover:text-[#17CFE3] transition-colors"
+              className="md:hidden p-2 rounded-lg bg-[#17CFE3]/10 text-[#E8F2F4] hover:text-[#17CFE3] hover:bg-[#17CFE3]/20 transition-all duration-200"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -114,6 +132,20 @@ const Header = () => {
           </div>
         </div>
       </header>
+
+      {/* Custom CSS for animations */}
+      <style jsx>{`
+        @keyframes slideInRight {
+          from {
+            opacity: 0;
+            transform: translateX(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      `}</style>
     </>
   );
 };
