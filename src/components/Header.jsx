@@ -36,54 +36,49 @@ const Header = () => {
   return (
     <>
       {/* Mobile Menu Full Screen Overlay */}
-      <div className={`fixed inset-0 z-50 md:hidden transition-all duration-300 ease-in-out ${
-        isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-      }`}>
-        {/* Backdrop */}
-        <div 
-          className="absolute inset-0 bg-black/70 backdrop-blur-md"
-          onClick={() => setIsMenuOpen(false)}
-        />
-        
-        {/* Menu Content - Slide in from right */}
-        <div className={`absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-[#042B35] shadow-2xl transition-transform duration-300 ease-in-out ${
-          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}>
-          {/* Menu Header */}
-          <div className="flex items-center justify-between p-6 border-b border-[#17CFE3]/20">
-            <Logo />
-            <button
-              className="p-2 rounded-lg bg-[#17CFE3]/10 text-[#E8F2F4] hover:text-[#17CFE3] hover:bg-[#17CFE3]/20 transition-all duration-200"
-              onClick={() => setIsMenuOpen(false)}
-              aria-label="Close menu"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-50 md:hidden">
+          {/* Backdrop */}
+          <div 
+            className="absolute inset-0 bg-black/70 backdrop-blur-md animate-fadeIn"
+            onClick={() => setIsMenuOpen(false)}
+          />
           
-          {/* Menu Items */}
-          <nav className="p-6">
-            <div className="space-y-2">
-              {navItems.map((item, index) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-[#E8F2F4] hover:text-[#17CFE3] hover:bg-[#17CFE3]/10 transition-all duration-200 font-medium block text-xl py-4 px-4 rounded-lg"
-                  onClick={() => setIsMenuOpen(false)}
-                  style={{
-                    animationDelay: `${index * 100}ms`,
-                    animation: isMenuOpen ? 'slideInRight 0.3s ease-out forwards' : 'none'
-                  }}
-                >
-                  {item.name}
-                </a>
-              ))}
+          {/* Menu Content - Slide in from right */}
+          <div className="absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-[#042B35] shadow-2xl animate-slideInRight">
+            {/* Menu Header */}
+            <div className="flex items-center justify-between p-6 border-b border-[#17CFE3]/20">
+              <Logo />
+              <button
+                className="p-2 rounded-lg bg-[#17CFE3]/10 text-[#E8F2F4] hover:text-[#17CFE3] hover:bg-[#17CFE3]/20 transition-all duration-200"
+                onClick={() => setIsMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
             </div>
-          </nav>
+            
+            {/* Menu Items */}
+            <nav className="p-6">
+              <div className="space-y-2">
+                {navItems.map((item, index) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-[#E8F2F4] hover:text-[#17CFE3] hover:bg-[#17CFE3]/10 transition-all duration-200 font-medium block text-xl py-4 px-4 rounded-lg animate-fadeInUp"
+                    onClick={() => setIsMenuOpen(false)}
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+            </nav>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Main Header */}
       <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
@@ -137,13 +132,43 @@ const Header = () => {
       <style jsx>{`
         @keyframes slideInRight {
           from {
+            transform: translateX(100%);
+          }
+          to {
+            transform: translateX(0);
+          }
+        }
+        
+        @keyframes fadeIn {
+          from {
             opacity: 0;
-            transform: translateX(20px);
           }
           to {
             opacity: 1;
-            transform: translateX(0);
           }
+        }
+        
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .animate-slideInRight {
+          animation: slideInRight 0.3s ease-out forwards;
+        }
+        
+        .animate-fadeIn {
+          animation: fadeIn 0.3s ease-out forwards;
+        }
+        
+        .animate-fadeInUp {
+          animation: fadeInUp 0.3s ease-out forwards;
         }
       `}</style>
     </>
