@@ -49,7 +49,7 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-yellow-300 hover:text-red-500 transition-colors duration-300 font-medium text-lg"
+                  className="text-[#E8F2F4] hover:text-[#17CFE3] transition-colors duration-300 font-medium text-lg"
                 >
                   {item.name}
                 </a>
@@ -58,7 +58,7 @@ const Header = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 text-yellow-300 hover:text-red-500 transition-colors z-50 relative bg-[#17CFE3]/10 rounded-lg"
+              className="md:hidden p-2 text-[#E8F2F4] hover:text-[#17CFE3] transition-colors z-50 relative bg-[#17CFE3]/10 rounded-lg"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -85,7 +85,7 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-yellow-300 hover:text-red-500 transition-colors duration-300 font-medium block text-lg py-3 border-b border-[#17CFE3]/10 last:border-b-0"
+                  className="text-[#E8F2F4] hover:text-[#17CFE3] transition-colors duration-300 font-medium block text-lg py-3 border-b border-[#17CFE3]/10 last:border-b-0"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -96,10 +96,7 @@ const Header = () => {
         </div>
       </header>
 
-      {/* TEST BANNER - VERY OBVIOUS */}
-      <div className="fixed top-0 left-0 right-0 bg-green-500 text-black text-center py-2 z-[60] font-bold">
-        🎉 DEPLOYMENT WORKING! Timestamp: {new Date().toLocaleString()} 🎉
-      </div>
+
     </>
   );
 };

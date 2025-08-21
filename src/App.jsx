@@ -123,20 +123,7 @@ function App() {
         </div>
       </section>
 
-      {/* TEST SECTION - VERY OBVIOUS */}
-      <section className="py-20 bg-red-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-6xl font-bold text-white mb-4">
-            🚀 DEPLOYMENT TEST 🚀
-          </h1>
-          <p className="text-2xl text-white mb-4">
-            If you see this RED section, deployment is working!
-          </p>
-          <p className="text-xl text-white">
-            Timestamp: {new Date().toLocaleString()}
-          </p>
-        </div>
-      </section>
+
     </div>
   );
 }
