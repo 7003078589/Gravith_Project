@@ -78,7 +78,7 @@ const Header = () => {
 
           {/* Mobile Navigation - Full Screen Overlay */}
           <div className={`md:hidden fixed top-16 left-0 right-0 bg-[#042B35]/95 backdrop-blur-md border-b border-[#17CFE3]/20 transition-all duration-300 ${
-            isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+            isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
           }`}>
             <nav className="py-8 px-6 space-y-6">
               {navItems.map((item) => (
