@@ -95,6 +95,11 @@ const Header = () => {
           </div>
         </div>
       </header>
+
+      {/* TEST BANNER - VERY OBVIOUS */}
+      <div className="fixed top-0 left-0 right-0 bg-green-500 text-black text-center py-2 z-[60] font-bold">
+        🎉 DEPLOYMENT WORKING! Timestamp: {new Date().toLocaleString()} 🎉
+      </div>
     </>
   );
 };

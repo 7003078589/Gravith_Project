@@ -129,8 +129,11 @@ function App() {
           <h1 className="text-6xl font-bold text-white mb-4">
             🚀 DEPLOYMENT TEST 🚀
           </h1>
-          <p className="text-2xl text-white">
+          <p className="text-2xl text-white mb-4">
             If you see this RED section, deployment is working!
+          </p>
+          <p className="text-xl text-white">
+            Timestamp: {new Date().toLocaleString()}
           </p>
         </div>
       </section>
