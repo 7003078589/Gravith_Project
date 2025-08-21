@@ -1,0 +1,129 @@
+import React from "react";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+
+function App() {
+  return (
+    <div className="relative min-h-screen bg-gradient-to-br from-[#042B35] via-[#063C49] to-[#073D4C] overflow-hidden text-[#E8F2F4]">
+      <Header />
+
+      {/* HERO ONLY */}
+      <section id="home" className="relative min-h-[92vh] overflow-hidden">
+        {/* background layers scoped to hero */}
+        <div className="absolute inset-0 z-0 pointer-events-none select-none">
+          {/* 1) Corner glow (tighter + brighter, not the whole top) */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: [
+                // tight cyan glow in the very corner
+                'radial-gradient(42% 42% at 96% 4%, rgba(30,208,226,.26) 0%, rgba(30,208,226,0) 60%)',
+                // subtle navbar fade so header stays readable
+                'linear-gradient(to bottom, rgba(0,0,0,.10) 0, rgba(0,0,0,0) 120px)'
+              ].join(', ')
+            }}
+          />
+
+          {/* 2) Watermark "G" (position/size + toned-down fill) */}
+          <div
+            aria-hidden
+            className="
+              absolute z-0 pointer-events-none select-none
+              right-[-3%] top-[-8%]        /* nudge into the corner */
+              aspect-square
+            "
+            style={{
+              // size tuned for laptop/desktop; tweak if needed
+              width: "clamp(840px, 64vw, 1220px)",
+
+              // mask: only paint inside the G shape (no box)
+              WebkitMask: "url('/g-watermark.png') center / contain no-repeat",
+              mask:       "url('/g-watermark.png') center / contain no-repeat",
+
+              // teal fill with gentle depth (slightly softer than before)
+              background:
+                "linear-gradient(180deg, rgba(32,203,219,.62) 0%, rgba(23,149,174,.50) 42%, rgba(7,61,76,.34) 100%)",
+
+              // soft edge + a touch of glow
+              filter: "drop-shadow(0 22px 58px rgba(30,208,226,.10)) blur(.15px)",
+            }}
+          />
+        </div>
+
+        {/* hero content above background */}
+        <div className="relative z-10">
+          <Hero />
+        </div>
+      </section>
+
+      {/* Other sections */}
+      <section id="about" className="py-20 bg-[#063C49]/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#E8F2F4] mb-6">
+              About GRAVIT
+            </h2>
+            <p className="text-xl text-[#E8F2F4]/80 max-w-3xl mx-auto">
+              We understand client requirements and provide solutions based on the problems. 
+              Currently we make use of all 3rd party applications to fix the solutions for our clients problems.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="py-20 bg-[#073D4C]/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#E8F2F4] mb-6">
+              Our Services
+            </h2>
+            <p className="text-xl text-[#E8F2F4]/80 max-w-3xl mx-auto">
+              From elaborate Excel sheets to better managed tools, websites for companies, 
+              systems and business practices - we've got you covered.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Technology Solutions",
+                description: "Custom technology solutions tailored to your business needs."
+              },
+              {
+                title: "Process Optimization",
+                description: "Streamline your business processes with modern tools and systems."
+              },
+              {
+                title: "Digital Transformation",
+                description: "Transform your business with cutting-edge digital solutions."
+              }
+            ].map((service, index) => (
+              <div key={index} className="bg-[#042B35]/50 p-8 rounded-2xl border border-[#17CFE3]/20 hover:border-[#17CFE3]/40 transition-all duration-300">
+                <h3 className="text-2xl font-bold text-[#E8F2F4] mb-4">{service.title}</h3>
+                <p className="text-[#E8F2F4]/80">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="py-20 bg-[#042B35]/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#E8F2F4] mb-6">
+              Get In Touch
+            </h2>
+            <p className="text-xl text-[#E8F2F4]/80 mb-8">
+              Ready to drive your business growth? Let's talk.
+            </p>
+            <button className="inline-flex items-center justify-center rounded-2xl px-8 py-4 text-lg font-semibold bg-[#17CFE3] text-slate-900 shadow-lg shadow-cyan-500/10 hover:brightness-110 transition">
+              Contact Us
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export default App;
