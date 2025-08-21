@@ -33,12 +33,12 @@ const Header = () => {
           />
           
           {/* Menu Content */}
-          <div className="absolute inset-0 bg-red-600">
+          <div className="absolute inset-0 bg-[#042B35]">
             {/* Menu Header */}
-            <div className="flex items-center justify-between p-4 border-b border-white/20">
+            <div className="flex items-center justify-between p-4 border-b border-[#17CFE3]/20">
               <Logo />
               <button
-                className="p-2 text-white hover:text-gray-200 transition-colors"
+                className="p-2 text-[#E8F2F4] hover:text-[#17CFE3] transition-colors"
                 onClick={() => setIsMenuOpen(false)}
                 aria-label="Close menu"
               >
@@ -55,7 +55,7 @@ const Header = () => {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="text-white hover:text-gray-200 transition-colors duration-300 font-medium block text-2xl py-4 border-b border-white/20 last:border-b-0"
+                    className="text-[#E8F2F4] hover:text-[#17CFE3] transition-colors duration-300 font-medium block text-2xl py-4 border-b border-[#17CFE3]/10 last:border-b-0"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
@@ -70,8 +70,8 @@ const Header = () => {
       {/* Main Header */}
       <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-red-600/95 backdrop-blur-md border-b border-white/20' 
-          : 'bg-red-600/80 backdrop-blur-sm'
+          ? 'bg-[#042B35]/95 backdrop-blur-md border-b border-[#17CFE3]/20' 
+          : 'bg-[#042B35]/80 backdrop-blur-sm'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
@@ -86,7 +86,7 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-white hover:text-gray-200 transition-colors duration-300 font-medium text-lg"
+                  className="text-[#E8F2F4] hover:text-[#17CFE3] transition-colors duration-300 font-medium text-lg"
                 >
                   {item.name}
                 </a>
@@ -95,7 +95,7 @@ const Header = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 text-white hover:text-gray-200 transition-colors"
+              className="md:hidden p-2 text-[#E8F2F4] hover:text-[#17CFE3] transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
