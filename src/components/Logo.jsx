@@ -5,7 +5,7 @@ const Logo = ({ className = "" }) => {
     <div className={`flex items-center gap-3 ${className}`}>
       <div className="w-8 h-8 bg-[#17CFE3] rounded-lg flex items-center justify-center">
         <img 
-          src="/assets/logos/logo.png" 
+          src="/assets/images/logo.png" 
           alt="GRAVIT Logo" 
           className="w-6 h-6 object-contain"
         />
