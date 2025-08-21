@@ -1,3 +1,7 @@
+<?php
+// Simple PHP redirect to serve the React app
+header('Content-Type: text/html; charset=utf-8');
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,6 +32,5 @@
   </head>
   <body>
     <div id="root"></div>
-    
   </body>
 </html>
