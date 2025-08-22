@@ -11,7 +11,7 @@ const Hero = () => {
       </div>
 
       {/* Large Background G for Mobile */}
-      <div className="absolute right-0 top-0 h-full w-1/2 opacity-10 sm:opacity-20 md:opacity-30 flex items-center justify-center">
+      <div className="absolute right-0 top-0 h-full w-1/2 opacity-5 sm:opacity-10 md:opacity-15 flex items-center justify-center">
         <div className="text-[#17CFE3] text-[200px] sm:text-[300px] md:text-[400px] lg:text-[500px] font-bold select-none">
           G
         </div>

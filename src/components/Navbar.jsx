@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import Logo from "./Logo";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -32,9 +33,8 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 bg-transparent">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
         {/* Brand */}
-        <a href="#home" className="flex items-center gap-2">
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-[#17CFE3] font-bold text-white">G</span>
-          <span className="text-white font-semibold tracking-wide">GRAVIT</span>
+        <a href="#home">
+          <Logo />
         </a>
 
         {/* Desktop nav */}
@@ -83,10 +83,7 @@ export default function Navbar() {
         aria-label="Mobile Menu"
       >
         <div className="flex items-center justify-between px-4 py-4">
-          <div className="flex items-center gap-2">
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-[#17CFE3] font-bold text-white">G</span>
-            <span className="text-white font-semibold tracking-wide">GRAVIT</span>
-          </div>
+          <Logo />
           <button
             onClick={() => setOpen(false)}
             className="inline-flex h-10 w-10 items-center justify-center rounded-md text-white hover:bg-white/10"
