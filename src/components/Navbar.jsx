@@ -3,6 +3,7 @@ import Logo from "./Logo";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const firstLinkRef = useRef(null);
 
   // Lock body scroll when menu is open
@@ -29,8 +30,23 @@ export default function Navbar() {
     if (open && firstLinkRef.current) firstLinkRef.current.focus();
   }, [open]);
 
+  // Handle scroll for header background
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-transparent">
+    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      scrolled 
+        ? 'bg-[#042B35]/95 backdrop-blur-md shadow-lg' 
+        : 'bg-transparent'
+    }`}>
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
         {/* Brand */}
         <a href="#home">
