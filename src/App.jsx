@@ -29,12 +29,12 @@ function App() {
             aria-hidden
             className="
               absolute z-0 pointer-events-none select-none
-              right-[-3%] top-[-8%]        /* nudge into the corner */
+              right-[-3%] top-[-8%] sm:right-[-3%] sm:top-[-8%]        /* responsive positioning */
               aspect-square
             "
             style={{
-              // responsive sizing for mobile and desktop
-              width: "clamp(300px, 90vw, 1220px)",
+              // size tuned for laptop/desktop; tweak if needed
+              width: "clamp(840px, 64vw, 1220px)",
 
               // mask: only paint inside the G shape (no box)
               WebkitMask: "url('/g-watermark.png') center / contain no-repeat",
