@@ -125,13 +125,7 @@ export default function Navbar() {
           >
             Contact
           </a>
-          <a 
-            href="#cta" 
-            className="mt-2 rounded-md bg-[#17CFE3] px-3 py-2 text-slate-900 font-semibold hover:bg-[#17CFE3]/90" 
-            onClick={() => setOpen(false)}
-          >
-            Get Started
-          </a>
+
         </nav>
 
         <div className="mt-auto px-4 py-6 text-xs text-white/60">
