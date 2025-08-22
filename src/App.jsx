@@ -33,8 +33,8 @@ function App() {
               aspect-square
             "
             style={{
-              // responsive sizing for mobile and desktop
-              width: "clamp(300px, 90vw, 1220px)",
+              // size tuned for laptop/desktop; tweak if needed
+              width: "clamp(840px, 64vw, 1220px)",
 
               // mask: only paint inside the G shape (no box)
               WebkitMask: "url('/g-watermark.png') center / contain no-repeat",
