@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "./components/Header";
+import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 
 function App() {
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-[#042B35] via-[#063C49] to-[#073D4C] overflow-hidden text-[#E8F2F4]">
-      <Header />
+      <Navbar />
 
       {/* HERO ONLY */}
       <section id="home" className="relative min-h-[92vh] overflow-hidden">
