@@ -2,22 +2,13 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <div className="relative min-h-dvh flex items-center overflow-hidden">
-      {/* Gradient base layer */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#042B35] via-[#063C49] to-[#073D4C]"></div>
-      
-      {/* Background G watermark */}
-      <img 
-        src="/g-watermark.png"
-        alt=""
-        className="
-          pointer-events-none select-none absolute -z-10
-          right-[-40vw] top-[-25vw] w-[160vw] max-w-none opacity-20
-          sm:right-[-30vw] sm:top-[-20vw] sm:w-[140vw]
-          md:right-[-20vw] md:top-[-15vw] md:w-[120vw]
-          lg:right-[-10vw] lg:top-[-10vw] lg:w-[110vw]
-        "
-      />
+    <div className="relative min-h-[92vh] flex items-center overflow-hidden">
+      {/* Background Pattern for Mobile */}
+      <div className="absolute inset-0 opacity-30 sm:opacity-50 md:opacity-30">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2317CFE3' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }}></div>
+      </div>
 
 
 
