@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <div className="relative min-h-[92vh] flex items-center overflow-hidden">
+    <div className="relative min-h-screen sm:min-h-[92vh] flex items-center overflow-hidden">
       {/* Background Pattern for Mobile */}
       <div className="absolute inset-0 opacity-30 sm:opacity-50 md:opacity-30">
         <div className="absolute inset-0" style={{
@@ -13,7 +13,7 @@ const Hero = () => {
 
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-32 pb-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20 sm:pt-24 md:pt-32 pb-16 sm:pb-20 md:pb-24">
         <div className="max-w-4xl">
           <div className="animate-slide-up">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[88px] font-extrabold text-[#E8F2F4] leading-[0.9] sm:leading-[0.95] mb-4 sm:mb-6">
