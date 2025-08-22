@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <div className="relative min-h-screen sm:min-h-[92vh] flex items-center overflow-hidden">
+    <div className="relative min-h-screen flex items-center overflow-hidden">
       {/* Transparent - uses App.jsx background */}
 
 

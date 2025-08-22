@@ -8,10 +8,10 @@ function App() {
       <Navbar />
 
       {/* HERO ONLY */}
-      <section id="home" className="relative min-h-[92vh] overflow-hidden">
-        {/* background layers scoped to hero */}
+      <section id="home" className="relative min-h-screen overflow-hidden">
+        {/* Responsive background layers */}
         <div className="absolute inset-0 z-0 pointer-events-none select-none">
-          {/* 1) Corner glow (tighter + brighter, not the whole top) */}
+          {/* 1) Base gradient background */}
           <div
             className="absolute inset-0"
             style={{
@@ -24,23 +24,50 @@ function App() {
             }}
           />
 
-          {/* 2) Watermark "G" (position/size + toned-down fill) */}
+          {/* 2) Responsive G Watermark */}
           <div
             aria-hidden
             className="
               absolute z-0 pointer-events-none select-none
-              right-[-3%] top-[-8%] sm:right-[-3%] sm:top-[-8%]        /* responsive positioning */
+              right-[-3%] top-[-8%]        /* desktop positioning */
               aspect-square
+              hidden sm:block              /* hide on mobile */
             "
             style={{
-              // size tuned for laptop/desktop; tweak if needed
+              // desktop sizing
               width: "clamp(840px, 64vw, 1220px)",
 
               // mask: only paint inside the G shape (no box)
               WebkitMask: "url('/g-watermark.png') center / contain no-repeat",
               mask:       "url('/g-watermark.png') center / contain no-repeat",
 
-              // teal fill with gentle depth (slightly softer than before)
+              // teal fill with gentle depth
+              background:
+                "linear-gradient(180deg, rgba(32,203,219,.62) 0%, rgba(23,149,174,.50) 42%, rgba(7,61,76,.34) 100%)",
+
+              // soft edge + a touch of glow
+              filter: "drop-shadow(0 22px 58px rgba(30,208,226,.10)) blur(.15px)",
+            }}
+          />
+
+          {/* 3) Mobile-specific G Watermark */}
+          <div
+            aria-hidden
+            className="
+              absolute z-0 pointer-events-none select-none
+              right-[-10%] top-[-5%]       /* mobile positioning */
+              aspect-square
+              block sm:hidden              /* show only on mobile */
+            "
+            style={{
+              // mobile sizing - smaller and more centered
+              width: "clamp(300px, 80vw, 600px)",
+
+              // mask: only paint inside the G shape (no box)
+              WebkitMask: "url('/g-watermark.png') center / contain no-repeat",
+              mask:       "url('/g-watermark.png') center / contain no-repeat",
+
+              // teal fill with gentle depth
               background:
                 "linear-gradient(180deg, rgba(32,203,219,.62) 0%, rgba(23,149,174,.50) 42%, rgba(7,61,76,.34) 100%)",
 
