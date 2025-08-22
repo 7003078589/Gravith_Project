@@ -38,20 +38,41 @@ export default function Navbar() {
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8 text-white/90">
-          <a href="#home" className="hover:text-white">Home</a>
-          <a href="#about" className="hover:text-white">About</a>
-          <a href="#services" className="hover:text-white">Services</a>
-          <a href="#contact" className="hover:text-white">Contact</a>
-          <a href="#cta" className="rounded-lg bg-[#17CFE3] px-4 py-2 font-medium text-slate-900 hover:bg-[#17CFE3]/90">
-            Get Started
+        <nav className="hidden md:flex items-center gap-8">
+          <a 
+            href="#home" 
+            className="relative text-white/90 hover:text-white transition-colors duration-200 group"
+          >
+            Home
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#17CFE3] transition-all duration-200 group-hover:w-full"></span>
+          </a>
+          <a 
+            href="#about" 
+            className="relative text-white/90 hover:text-white transition-colors duration-200 group"
+          >
+            About
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#17CFE3] transition-all duration-200 group-hover:w-full"></span>
+          </a>
+          <a 
+            href="#services" 
+            className="relative text-white/90 hover:text-white transition-colors duration-200 group"
+          >
+            Services
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#17CFE3] transition-all duration-200 group-hover:w-full"></span>
+          </a>
+          <a 
+            href="#contact" 
+            className="relative text-white/90 hover:text-white transition-colors duration-200 group"
+          >
+            Contact
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#17CFE3] transition-all duration-200 group-hover:w-full"></span>
           </a>
         </nav>
 
         {/* Mobile hamburger */}
         <button
           onClick={() => setOpen(true)}
-          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/10 text-white ring-1 ring-white/20 hover:bg-white/20"
+          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white ring-1 ring-white/20 hover:bg-white/20 hover:ring-white/30 transition-all duration-200"
           aria-label="Open menu"
           aria-controls="mobile-drawer"
           aria-expanded={open}
@@ -95,37 +116,40 @@ export default function Navbar() {
           </button>
         </div>
 
-        <nav className="mt-2 grid gap-3 px-4 text-lg">
+        <nav className="mt-2 grid gap-1 px-4 text-lg">
           <a 
             ref={firstLinkRef} 
             href="#home" 
-            className="rounded-md px-2 py-2 text-white hover:bg-white/10" 
+            className="rounded-lg px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-200 flex items-center group" 
             onClick={() => setOpen(false)}
           >
+            <span className="w-1 h-1 bg-[#17CFE3] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
             Home
           </a>
           <a 
             href="#about" 
-            className="rounded-md px-2 py-2 text-white hover:bg-white/10" 
+            className="rounded-lg px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-200 flex items-center group" 
             onClick={() => setOpen(false)}
           >
+            <span className="w-1 h-1 bg-[#17CFE3] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
             About
           </a>
           <a 
             href="#services" 
-            className="rounded-md px-2 py-2 text-white hover:bg-white/10" 
+            className="rounded-lg px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-200 flex items-center group" 
             onClick={() => setOpen(false)}
           >
+            <span className="w-1 h-1 bg-[#17CFE3] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
             Services
           </a>
           <a 
             href="#contact" 
-            className="rounded-md px-2 py-2 text-white hover:bg-white/10" 
+            className="rounded-lg px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-200 flex items-center group" 
             onClick={() => setOpen(false)}
           >
+            <span className="w-1 h-1 bg-[#17CFE3] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
             Contact
           </a>
-
         </nav>
 
         <div className="mt-auto px-4 py-6 text-xs text-white/60">
