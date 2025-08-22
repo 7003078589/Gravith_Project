@@ -10,12 +10,7 @@ const Hero = () => {
         }}></div>
       </div>
 
-      {/* Large Background G for Mobile */}
-      <div className="absolute right-0 top-0 h-full w-1/2 opacity-5 sm:opacity-10 md:opacity-15 flex items-center justify-center">
-        <div className="text-[#17CFE3] text-[200px] sm:text-[300px] md:text-[400px] lg:text-[500px] font-bold select-none">
-          G
-        </div>
-      </div>
+
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-32 pb-24">
